@@ -1,12 +1,14 @@
 <RCC>
     <qresource prefix="/sfx">
-        <file>laser.wav</file>
         <file>GameLoop.wav</file>
+        <file>laser.wav</file>
     </qresource>
     <qresource prefix="/sprites">
+        <file>laser.png</file>
+        <file>laser2.png</file>
         <file>SpaceShip.png</file>
         <file>SpaceShip2.png</file>
-        <file>laser.png</file>
         <file>SpaceBG.png</file>
+        <file>SpaceShip3.png</file>
     </qresource>
 </RCC>

@@ -9,6 +9,7 @@
 class EnemySpawner : public QObject, public QGraphicsRectItem {
     Q_OBJECT
 public:
+    int count;
     EnemySpawner();
 public slots:
     void SpawnEnemy();

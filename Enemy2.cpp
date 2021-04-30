@@ -1,11 +1,12 @@
-#include "Enemy.h"
+#include "Enemy2.h"
 #include "EnemyBullet.h"
 #include "PlayerRect.h"
 #include "Game.h"
+#include <math.h>
 
 extern Game * game;
 
-Enemy::Enemy()
+Enemy2::Enemy2()
 {
     count++;
     health = 1;
@@ -13,18 +14,18 @@ Enemy::Enemy()
 
     int random_number = rand() %500;
     setPos(random_number,0);
-    setPixmap(QPixmap(":/sprites/SpaceShip2.png"));
+    setPixmap(QPixmap(":/sprites/SpaceShip3.png"));
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
 }
 
-int Enemy::count = 0;
+int Enemy2::count = 0;
 
-void Enemy::move()
+void Enemy2::move()
 {
-    setPos(x(), y()+5);
+    setPos(x()+10*sin(y()/50), y()+2);
     if(y() > 800 + pixmap().height()){
         count--;
         scene()->removeItem(this);
@@ -43,15 +44,6 @@ void Enemy::move()
     //shoot at player
     shootTimer--;
     if(shootTimer == 0){
-        shoot();
+        Enemy::shoot();
     }
-}
-
-void Enemy::shoot()
-{
-    shootTimer = 50;
-    EnemyBullet * bullet = new EnemyBullet();
-    bullet->setScale(3);
-    bullet->setPos(x()+pixmap().width()/2+bullet->pixmap().width()/2, y()+pixmap().height()/2);
-    scene()->addItem(bullet);
 }

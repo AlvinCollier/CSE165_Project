@@ -1,23 +1,23 @@
-#ifndef ENEMY_H
-#define ENEMY_H
+#ifndef ENEMY2_H
+#define ENEMY2_H
 
 #include<QGraphicsPixmapItem>
 #include<QObject>
 #include <QTimer>
 #include <QGraphicsScene>
+#include "Enemy.h"
 
-class Enemy: public QObject, public QGraphicsPixmapItem {
+class Enemy2 : public Enemy {
     Q_OBJECT
 public:
     static int count;
-    Enemy();
+    Enemy2();
 public slots:
     virtual void move();
-    void shoot();
 private:
     int health;
     int shootTimer;
 };
 
 
-#endif // ENEMY_H
+#endif // ENEMY2_H
