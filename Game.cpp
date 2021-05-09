@@ -19,6 +19,10 @@ Game::Game()
     health = new Health();
     health->setPos(x(), y()+25);
     scene->addItem(health);
+    if(health->getHealth()<=-100)
+    {
+
+    }
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

@@ -34,7 +34,9 @@ void Enemy::move()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i = 0; i < colliding_items.size(); i++){
         if(typeid(*(colliding_items[i])) == typeid(PlayerRect)){
-            game->health->decrease();
+            //factor by which health decreases by
+            int dFactor=2;
+            game->health->decrease(dFactor);
             scene()->removeItem(this);
             delete(this);
             return;

@@ -7,10 +7,10 @@ Health::Health(QGraphicsItem *parent)
     setDefaultTextColor(Qt::green);
     setFont(QFont("times", 16));
 }
-
-void Health::decrease()
+// //parametrize decrease so we can customize the decrease factor for individual enemies
+void Health::decrease(int decreaseFactor)
 {
-    health--;
+    health-=decreaseFactor;
     setPlainText(QString("SHIELDS: ") + QString::number(health));
 }
 
