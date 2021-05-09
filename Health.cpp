@@ -8,9 +8,9 @@ Health::Health(QGraphicsItem *parent)
     setFont(QFont("times", 16));
 }
 
-void Health::decrease()
+void Health::decrease(int damage)
 {
-    health--;
+    health -= damage;
     setPlainText(QString("SHIELDS: ") + QString::number(health));
 }
 

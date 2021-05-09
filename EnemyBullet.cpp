@@ -23,7 +23,7 @@ void EnemyBullet::move()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i = 0; i < colliding_items.size(); i++){
         if(typeid(*(colliding_items[i])) == typeid(PlayerRect)){
-            game->health->decrease();
+            game->health->decrease(1);
             scene()->removeItem(this);
             delete(this);
             return;

@@ -10,5 +10,6 @@
         <file>SpaceShip2.png</file>
         <file>SpaceBG.png</file>
         <file>SpaceShip3.png</file>
+        <file>SpaceShip4.png</file>
     </qresource>
 </RCC>

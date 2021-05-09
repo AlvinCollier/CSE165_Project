@@ -13,6 +13,7 @@ SOURCES += \
     Bullet.cpp \
     Enemy.cpp \
     Enemy2.cpp \
+    Enemy3.cpp \
     EnemyBullet.cpp \
     EnemySpawner.cpp \
     Game.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     Bullet.h \
     Enemy.h \
     Enemy2.h \
+    Enemy3.h \
     EnemyBullet.h \
     EnemySpawner.h \
     Game.h \

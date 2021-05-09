@@ -1,6 +1,7 @@
 #include "EnemySpawner.h"
 #include "Enemy.h"
 #include "Enemy2.h"
+#include "Enemy3.h"
 
 EnemySpawner::EnemySpawner()
 {
@@ -20,6 +21,11 @@ void EnemySpawner::SpawnEnemy()
     }
     else if(count <= 19){
         Enemy2 * enemy = new Enemy2();
+        enemy->setScale(3);
+        scene()->addItem(enemy);
+    }
+    else if(count <= 29){
+        Enemy3 * enemy = new Enemy3();
         enemy->setScale(3);
         scene()->addItem(enemy);
     }

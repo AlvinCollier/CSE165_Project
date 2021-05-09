@@ -1,6 +1,7 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Enemy2.h"
+#include "Enemy3.h"
 #include "Game.h"
 #include <QTimer>
 #include <QGraphicsScene>
@@ -29,7 +30,8 @@ void Bullet::move()
     //check collisions
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i = 0; i < colliding_items.size(); i++){
-        if(typeid(*(colliding_items[i])) == typeid(Enemy) || typeid(*(colliding_items[i])) == typeid(Enemy2)){
+        if(typeid(*(colliding_items[i])) == typeid(Enemy) || typeid(*(colliding_items[i])) == typeid(Enemy2)
+                || typeid(*(colliding_items[i])) == typeid(Enemy3)){
             game->score->increase();
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
