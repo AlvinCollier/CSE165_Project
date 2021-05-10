@@ -8,8 +8,10 @@ public:
     Score(QGraphicsItem * parent=0);
     void increase();
     int getScore();
+    int getBestScore();
 private:
     int score;
+    int bestScore;
 };
 
 

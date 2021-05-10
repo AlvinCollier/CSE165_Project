@@ -971,7 +971,8 @@ Game.o: Game.cpp Game.h \
 		Health.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Game.o Game.cpp
 
-Health.o: Health.cpp Health.h
+Health.o: Health.cpp Health.h \
+		Score.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Health.o Health.cpp
 
 PlayerRect.o: PlayerRect.cpp PlayerRect.h \

@@ -2,6 +2,7 @@
 
 Game::Game()
 {
+
     scene = new QGraphicsScene();
     scene->setBackgroundBrush(QBrush(QImage(":/sprites/SpaceBG.png")));
     setScene(scene);
@@ -17,6 +18,7 @@ Game::Game()
     scene->addItem(score);
 
     health = new Health();
+    health->setScore(score);
     health->setPos(x(), y()+25);
     scene->addItem(health);
 
