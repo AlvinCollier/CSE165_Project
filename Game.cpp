@@ -39,4 +39,6 @@ Game::Game()
     QMediaPlayer * music = new QMediaPlayer;
     music->setMedia(playlist);
     music->play();
+
+    
 }

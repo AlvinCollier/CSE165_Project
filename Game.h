@@ -12,6 +12,7 @@
 #include <QBrush>
 #include <QImage>
 
+
 class Game : public QGraphicsView {
 public:
     Game();
