@@ -3,7 +3,7 @@
 
 Health::Health(QGraphicsItem *parent)
 {
-    health = 3;
+    health = 25;
     
     setPlainText(QString("SHIELDS: ") + QString::number(health));
     setDefaultTextColor(Qt::green);
