@@ -25,6 +25,12 @@ int Enemy3::count = 0;
 
 void Enemy3::move()
 {
+    //check for game over
+    if(game->gameOver==true){
+        scene()->removeItem(this);
+        delete(this);
+        return;
+    }
     if(x() < 300 +pixmap().height()){
         setPos(pow(y()/50,3), y()+5);
     }

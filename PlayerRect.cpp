@@ -1,5 +1,8 @@
+#include "Game.h"
 #include "PlayerRect.h"
 #include "Bullet.h"
+
+extern Game * game;
 
 PlayerRect::PlayerRect(){
     bulletSound = new QMediaPlayer();
@@ -8,6 +11,9 @@ PlayerRect::PlayerRect(){
 
 void PlayerRect::keyPressEvent(QKeyEvent * event)
 {
+    if(game->gameOver==true){
+        return;
+    }
     if(event->key() == Qt::Key_Left){
         if(x() > 0){
             setPos(x()-10,y());

@@ -13,6 +13,12 @@ EnemyBullet::EnemyBullet()
 
 void EnemyBullet::move()
 {
+    //check for game over
+    if(game->gameOver==true){
+        scene()->removeItem(this);
+        delete(this);
+        return;
+    }
     setPos(x(), y()+10);
     if(y() > 800 + pixmap().height()){
         count--;

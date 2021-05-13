@@ -27,6 +27,12 @@ int Bullet::count = 0;
 
 void Bullet::move()
 {
+    //check for game over
+    if(game->gameOver==true){
+        scene()->removeItem(this);
+        delete(this);
+        return;
+    }
     //check collisions
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i = 0; i < colliding_items.size(); i++){

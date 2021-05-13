@@ -1,5 +1,8 @@
 #include "Health.h"
+#include "Game.h"
 #include <fstream>
+
+extern Game * game;
 
 Health::Health(QGraphicsItem *parent)
 {
@@ -19,6 +22,7 @@ void Health::decrease(int damage)
     setPlainText(QString("SHIELDS: ") + QString::number(health));
     if(health <= 0){
         setPlainText(QString("Shields down, game over!"));
+        game->gameOver = true;
         saveScore();
     }
 }

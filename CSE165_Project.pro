@@ -20,6 +20,7 @@ SOURCES += \
     Health.cpp \
     PlayerRect.cpp \
     Score.cpp \
+    ScrollingBackground.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -34,6 +35,7 @@ HEADERS += \
     Health.h \
     PlayerRect.h \
     Score.h \
+    ScrollingBackground.h \
     mainwindow.h
 
 FORMS += \

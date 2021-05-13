@@ -1,7 +1,10 @@
+#include "Game.h"
 #include "EnemySpawner.h"
 #include "Enemy.h"
 #include "Enemy2.h"
 #include "Enemy3.h"
+
+extern Game * game;
 
 EnemySpawner::EnemySpawner()
 {
@@ -13,6 +16,11 @@ EnemySpawner::EnemySpawner()
 
 void EnemySpawner::SpawnEnemy()
 {
+    //check for game over
+    if(game->gameOver==true){
+        count = 0;
+        return;
+    }
     count++;
     if(count <= 9){
         Enemy * enemy = new Enemy();

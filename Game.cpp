@@ -2,10 +2,17 @@
 
 Game::Game()
 {
+    gameOver = false;
 
     scene = new QGraphicsScene();
-    scene->setBackgroundBrush(QBrush(QImage(":/sprites/SpaceBG.png")));
+    //scene->setBackgroundBrush(QBrush(QImage(":/sprites/SpaceBG.png")));
     setScene(scene);
+
+    ScrollingBackground * bg1 = new ScrollingBackground();
+    scene->addItem(bg1);
+    ScrollingBackground * bg2 = new ScrollingBackground();
+    bg2->setPos(0, -3*bg2->pixmap().height());
+    scene->addItem(bg2);
 
     player = new PlayerRect();
     player->setPixmap(QPixmap(":/sprites/SpaceShip.png"));
